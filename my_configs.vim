@@ -286,3 +286,8 @@ let g:quickr_preview_on_cursor = 1
 "         \ }
 "     \ })
 " endif
+
+""""""""""""""""""""""""""""""
+" => Fix The legacy SnipMate parser is deprecated. Please see :h SnipMate-deprecate.
+""""""""""""""""""""""""""""""
+let g:snipMate = { 'snippet_version' : 1 }
