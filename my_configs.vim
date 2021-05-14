@@ -58,6 +58,8 @@ Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'ronakg/quickr-preview.vim'
+Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+Plug 'puremourning/vimspector'
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -70,7 +72,7 @@ map <leader>cw :cd ~/Desktop/Wedoist/wedoist<cr>
 " => colorcheme
 """"""""""""""""""""""""""""""
 try
-    colorscheme gruvbox 
+    colorscheme gruvbox
 catch
 endtry
 
@@ -220,5 +222,16 @@ let g:asyncrun_open = 8
 """"""""""""""""""""""""""""""
 " => AsyncTask
 """"""""""""""""""""""""""""""
-noremap <silent><f5> :AsyncTask file-run<cr>
-noremap <silent><f9> :AsyncTask file-build<cr>
+" noremap <silent><f5> :AsyncTask file-run<cr>
+" noremap <silent><f9> :AsyncTask file-build<cr>
+
+""""""""""""""""""""""""""""""
+" => vim-airline
+""""""""""""""""""""""""""""""
+let g:airline#extensions#fzf#enabled = 1
+let g:airline#extensions#grepper#enabled = 1
+
+""""""""""""""""""""""""""""""
+" =>vimspecto
+""""""""""""""""""""""""""""""
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
