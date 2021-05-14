@@ -36,6 +36,7 @@ Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
 Plug 'yianwillis/vimcdoc'
 Plug 'vim-airline/vim-airline'
+Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'skywind3000/vim-quickui'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -291,3 +292,13 @@ let g:quickr_preview_on_cursor = 1
 " => Fix The legacy SnipMate parser is deprecated. Please see :h SnipMate-deprecate.
 """"""""""""""""""""""""""""""
 let g:snipMate = { 'snippet_version' : 1 }
+""""""""""""""""""""""""""""""
+" => skywind3000/asyncrun.vim' 
+""""""""""""""""""""""""""""""
+let g:asyncrun_open = 8
+
+""""""""""""""""""""""""""""""
+" => AsyncTask
+""""""""""""""""""""""""""""""
+noremap <silent><f5> :AsyncTask file-run<cr>
+noremap <silent><f9> :AsyncTask file-build<cr>
