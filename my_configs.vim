@@ -9,8 +9,8 @@ au BufWinEnter *.* set colorcolumn=80
 "set cursorline
 "set cursorcolumn
  
-"highlight CursorLine cterm=none ctermbg=236
-"highlight CursorColumn cterm=none ctermbg=236
+highlight CursorLine cterm=none ctermbg=236
+highlight CursorColumn cterm=none ctermbg=236
 " Exit insert mode by shortcut
 inoremap jj <ESC>
 " 防止选中执行<或者>后选中被取消问题
@@ -132,56 +132,6 @@ elseif has("mac")
 endif
 
 """"""""""""""""""""""""""""""
-" => vim-gutentags
-""""""""""""""""""""""""""""""
-" " gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
-" let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
-
-" " 所生成的数据文件的名称
-" let g:gutentags_ctags_tagfile = '.tags'
-
-" let g:gutentags_modules = []
-" if executable('ctags')
-" 	let g:gutentags_modules += ['ctags']
-" endif
-" if executable('gtags-cscope') && executable('gtags')
-" 	" let g:gutentags_modules += ['gtags_cscope']
-" endif
-
-" " let g:gutentags_cache_dir = expand('~/.cache/tags')
-" let s:vim_tags = expand('~/.cache/tags')
-" let g:gutentags_cache_dir = s:vim_tags
-
-" let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-" let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-" let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-
-" " let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
-
-" let g:gutentags_auto_add_gtags_cscope = 0
-" let g:gutentags_define_advanced_commands = 1
-" set tags+=~/.cache/tags/stdlib.tags
-""""""""""""""""""""""""""""""
-" => YouCompleteMe 
-""""""""""""""""""""""""""""""
-" let g:ycm_add_preview_to_completeopt = 0
-" let g:ycm_show_diagnostics_ui = 0
-" let g:ycm_server_log_level = 'info'
-" let g:ycm_min_num_identifier_candidate_chars = 2
-" let g:ycm_collect_identifiers_from_comments_and_strings = 1
-" let g:ycm_complete_in_strings=1
-" " let g:ycm_key_invoke_completion = '<c-z>'
-" set completeopt=menu,menuone
-
-" " noremap <c-z> <NOP>
-
-" let g:ycm_semantic_triggers =  {
-"             \ 'c,cpp<Plug>PeepOpenython,java,go,erlang<Plug>PeepOpenerl': ['re!\w{2}'],
-"             \ 'cs,lua,javascript': ['re!\w{2}'],
-"             \ }
-
-" let g:ycm_global_ycm_extra_conf='~/.vim_runtime/.ycm_extra_conf.py'
-""""""""""""""""""""""""""""""
 " => Search all word 
 """"""""""""""""""""""""""""""
 " 取消默认的CtrlP
@@ -258,40 +208,10 @@ let g:quickr_preview_keymaps = 0
 let g:quickr_preview_on_cursor = 1
 
 """"""""""""""""""""""""""""""
-" => Kite
-""""""""""""""""""""""""""""""
-" Python, JavaScript, Go
-" let g:kite_supported_languages = ['python', 'javascript', 'go']
-
-" All the languages Kite supports
-" let g:kite_supported_languages = ['*']
-
-" Turn off Kite
-" let g:kite_supported_languages = []
-
-" set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
-" set laststatus=2  " always display the status line
-
-""""""""""""""""""""""""""""""
-" => sumneko/lua-language-server
-""""""""""""""""""""""""""""""
-" let lua_lsp = glob('~/.vscode/extensions/sumneko.lua*', 0, 1)
-" if len(lua_lsp)
-"     let lua_lsp = lua_lsp[-1] . '\server'
-"     call coc#config('languageserver', {
-"         \ 'lua-language-server': {
-"         \     'cwd': lua_lsp,
-"         \     'command': lua_lsp . '\bin\Windows\lua-language-server.exe',
-"         \     'args': ['-E', '-e', 'LANG="zh-cn"', lua_lsp . '\main.lua'],
-"         \     'filetypes': ['lua'],
-"         \ }
-"     \ })
-" endif
-
-""""""""""""""""""""""""""""""
 " => Fix The legacy SnipMate parser is deprecated. Please see :h SnipMate-deprecate.
 """"""""""""""""""""""""""""""
 let g:snipMate = { 'snippet_version' : 1 }
+
 """"""""""""""""""""""""""""""
 " => skywind3000/asyncrun.vim' 
 """"""""""""""""""""""""""""""
