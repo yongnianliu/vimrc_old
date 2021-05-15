@@ -9,8 +9,8 @@ au BufWinEnter *.* set colorcolumn=80
 "set cursorline
 "set cursorcolumn
  
-highlight CursorLine cterm=none ctermbg=236
-highlight CursorColumn cterm=none ctermbg=236
+" highlight CursorLine cterm=none ctermbg=236
+" highlight CursorColumn cterm=none ctermbg=236
 " Exit insert mode by shortcut
 inoremap jj <ESC>
 " 防止选中执行<或者>后选中被取消问题
@@ -35,31 +35,31 @@ call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
 Plug 'yianwillis/vimcdoc'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'skywind3000/vim-quickui'
+" Plug 'skywind3000/vim-quickui'
+" Plug 'skywind3000/gutentags_plus'
+" Plug 'skywind3000/vim-preview'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-session'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 " Plug 'ludovicchabant/vim-gutentags'
-" Plug 'skywind3000/gutentags_plus'
-Plug 'skywind3000/vim-preview'
 " Plug 'davidhalter/jedi-vim'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'ronakg/quickr-preview.vim'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -82,6 +82,7 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
+    " set guifont="SourceCodePro Nerd Font Mono:h11"
     set guifont=Consolas:h11:cANSI
   endif
 endif
@@ -126,12 +127,12 @@ set wildmenu
 """"""""""""""""""""""""""""""
 " => gtagso
 """""""""""""""""""""""""""""o
-let $GTAGSLABEL = 'native-pygments'
-if has("win32")
-    let $GTAGSCONF = 'G:\software\glo663wb\share\gtags\gtags.conf'
-elseif has("mac")
-    let $GTAGSCONF = '/usr/local/share/gtags/gtags.conf'
-endif
+" let $GTAGSLABEL = 'native-pygments'
+" if has("win32")
+"     let $GTAGSCONF = 'G:\software\glo663wb\share\gtags\gtags.conf'
+" elseif has("mac")
+"     let $GTAGSCONF = '/usr/local/share/gtags/gtags.conf'
+" endif
 
 """"""""""""""""""""""""""""""
 " => Search all word 
@@ -148,12 +149,13 @@ nnoremap <c-p> :FZF <CR>
 """"""""""""""""""""""""""""""
 " => vim-session
 """"""""""""""""""""""""""""""
-let g:session_autoload = 'no'
+" let g:session_autoload = 'no'
 
 """"""""""""""""""""""""""""""
 " => Tagbar 
 """"""""""""""""""""""""""""""
-nnoremap <leader>tb :TagbarOpenAutoClose<CR>
+" nnoremap <leader>tb :TagbarOpenAutoClose<CR>
+
 """"""""""""""""""""""""""""""
 " => indentLine
 """"""""""""""""""""""""""""""
@@ -195,6 +197,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " => CMake 
 """"""""""""""""""""""""""""""
 nnoremap <Leader>cm :wa<CR>:make<CR>:cw<CR>
+
 """"""""""""""""""""""""""""""
 " => CoC.vim
 """"""""""""""""""""""""""""""
@@ -206,8 +209,8 @@ endtry
 """"""""""""""""""""""""""""""
 " => quickr-preview
 """"""""""""""""""""""""""""""
-let g:quickr_preview_keymaps = 0
-let g:quickr_preview_on_cursor = 1
+" let g:quickr_preview_keymaps = 0
+" let g:quickr_preview_on_cursor = 1
 
 """"""""""""""""""""""""""""""
 " => Fix The legacy SnipMate parser is deprecated. Please see :h SnipMate-deprecate.
@@ -222,16 +225,16 @@ let g:asyncrun_open = 8
 """"""""""""""""""""""""""""""
 " => AsyncTask
 """"""""""""""""""""""""""""""
-" noremap <silent><f5> :AsyncTask file-run<cr>
-" noremap <silent><f9> :AsyncTask file-build<cr>
+noremap <silent><f5> :AsyncTask file-run<cr>
+noremap <silent><f9> :AsyncTask file-build<cr>
 
 """"""""""""""""""""""""""""""
 " => vim-airline
 """"""""""""""""""""""""""""""
-let g:airline#extensions#fzf#enabled = 1
-let g:airline#extensions#grepper#enabled = 1
+" let g:airline#extensions#fzf#enabled = 1
+" let g:airline#extensions#grepper#enabled = 1
 
 """"""""""""""""""""""""""""""
 " =>vimspecto
 """"""""""""""""""""""""""""""
-let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+" let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
