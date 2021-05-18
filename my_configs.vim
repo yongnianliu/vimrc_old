@@ -60,6 +60,7 @@ Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'ronakg/quickr-preview.vim'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'puremourning/vimspector'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -138,8 +139,8 @@ set wildmenu
 " => Search all word 
 """"""""""""""""""""""""""""""
 " 取消默认的CtrlP
-" unnoremap <c-f>
-nnoremap <c-f> :vimgrep <cword> % \| cw <CR>
+" unmap <c-f>
+" nnoremap <c-f> :vimgrep <cword> % \| cw <CR>
 
 """"""""""""""""""""""""""""""
 " => FZF 
@@ -234,7 +235,7 @@ let g:asyncrun_open = 8
 " => AsyncTask
 """"""""""""""""""""""""""""""
 noremap <silent><c-f5> :AsyncTask file-run<cr>
-noremap <silent><c-b> :AsyncTask file-build<cr>
+" noremap <silent><c-b> :AsyncTask file-build<cr>
 
 """"""""""""""""""""""""""""""
 " => vim-airline
@@ -246,3 +247,11 @@ noremap <silent><c-b> :AsyncTask file-build<cr>
 " =>vimspecto
 """"""""""""""""""""""""""""""
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
+""""""""""""""""""""""""""""""
+" => LeaderF
+""""""""""""""""""""""""""""""
+try
+    source ~/.vim_runtime/my_configs/LeaderF.vim
+catch
+endtry
