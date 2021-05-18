@@ -60,7 +60,7 @@ Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'ronakg/quickr-preview.vim'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'puremourning/vimspector'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+" Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -110,7 +110,7 @@ endif
 """"""""""""""""""""""""""""""
 " => Ack quick search word
 """"""""""""""""""""""""""""""
-nnoremap <leader><leader>g :Ack <cword><CR>
+" nnoremap <leader><leader>g :Ack <cword><CR>
 
 """"""""""""""""""""""""""""""
 " => Search HighLight
@@ -251,7 +251,15 @@ let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 """"""""""""""""""""""""""""""
 " => LeaderF
 """"""""""""""""""""""""""""""
+" try
+"     source ~/.vim_runtime/my_configs/LeaderF.vim
+" catch
+" endtry
+
+""""""""""""""""""""""""""""""
+" => vim-grepper
+""""""""""""""""""""""""""""""
 try
-    source ~/.vim_runtime/my_configs/LeaderF.vim
+    source ~/.vim_runtime/my_configs/vim-grepper.vim
 catch
 endtry
