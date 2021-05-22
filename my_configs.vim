@@ -62,6 +62,7 @@ Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'puremourning/vimspector'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -248,6 +249,12 @@ noremap <silent><c-b> :AsyncTask file-build<cr>
 " =>vimspecto
 """"""""""""""""""""""""""""""
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
 
 """"""""""""""""""""""""""""""
 " => LeaderF
