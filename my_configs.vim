@@ -65,6 +65,11 @@ Plug 'mhinz/vim-startify'
 Plug 'Xuyuanp/nerdtree-git-plugin' |
             \ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+if has('nvim') || has('patch-8.0.902')
+  Plug 'mhinz/vim-signify'
+else
+  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+endif
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -248,7 +253,7 @@ noremap <silent><c-b> :AsyncTask file-build<cr>
 " let g:airline#extensions#grepper#enabled = 1
 
 """"""""""""""""""""""""""""""
-" =>vimspecto
+" =>vimspector
 """"""""""""""""""""""""""""""
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 " mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
@@ -257,6 +262,12 @@ let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
+
+let g:vimspector_sign_priority = {
+  \   'vimspectorBP': 19,
+  \   'vimspectorBPCond': 19,
+  \   'vimspectorBPDisabled': 19,
+  \ }
 
 """"""""""""""""""""""""""""""
 " => LeaderF
