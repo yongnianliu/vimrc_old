@@ -60,6 +60,7 @@ Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'ronakg/quickr-preview.vim'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'puremourning/vimspector'
+Plug 'ryanoasis/vim-devicons'
 " Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 call plug#end()
 
@@ -83,8 +84,7 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-    " set guifont="SourceCodePro Nerd Font Mono:h11"
-    set guifont=Consolas:h11:cANSI
+    set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h11
   endif
 endif
 
@@ -145,6 +145,7 @@ set wildmenu
 """"""""""""""""""""""""""""""
 " => FZF 
 """"""""""""""""""""""""""""""
+" nunmap <c-p>
 nnoremap <c-p> :FZF <CR>
 
 """"""""""""""""""""""""""""""
@@ -191,7 +192,7 @@ let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 """"""""""""""""""""""""""""""
@@ -235,7 +236,7 @@ let g:asyncrun_open = 8
 " => AsyncTask
 """"""""""""""""""""""""""""""
 noremap <silent><c-f5> :AsyncTask file-run<cr>
-" noremap <silent><c-b> :AsyncTask file-build<cr>
+noremap <silent><c-b> :AsyncTask file-build<cr>
 
 """"""""""""""""""""""""""""""
 " => vim-airline
