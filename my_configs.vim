@@ -92,7 +92,9 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-    set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h11
+    " set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h11
+    " set guifont="SourceCodePro\ NF:h11"
+    set guifont=SauceCodePro\ Nerd\ Font\ Mono:h11
   endif
 endif
 
