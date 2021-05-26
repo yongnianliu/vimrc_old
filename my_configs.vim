@@ -136,6 +136,11 @@ set wildmode=longest,list,full
 set wildmenu
 
 """"""""""""""""""""""""""""""
+" => undotree
+""""""""""""""""""""""""""""""
+nnoremap <leader>u :UndotreeToggle <CR>
+
+""""""""""""""""""""""""""""""
 " => gtagso
 """""""""""""""""""""""""""""o
 " let $GTAGSLABEL = 'native-pygments'
