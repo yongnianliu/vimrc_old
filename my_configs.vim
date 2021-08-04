@@ -31,6 +31,13 @@ if IsWSL()
     nnoremap <esc>^[ <esc>^[
 endif
 
+if has("win32")
+    set shell=C:\Windows\System32\wsl.exe
+    set shellpipe=|
+    set shellredir=>
+    set shellcmdflag=
+endif
+
 call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
