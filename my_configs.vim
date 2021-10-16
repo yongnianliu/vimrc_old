@@ -42,34 +42,19 @@ call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
 Plug 'yianwillis/vimcdoc'
-" Plug 'vim-airline/vim-airline'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
-" Plug 'skywind3000/vim-quickui'
-" Plug 'skywind3000/gutentags_plus'
-" Plug 'skywind3000/vim-preview'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-session'
-" Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
-" Plug 'ludovicchabant/vim-gutentags'
-" Plug 'davidhalter/jedi-vim'
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'kien/rainbow_parentheses.vim'
-" Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'ronakg/quickr-preview.vim'
 Plug 'puremourning/vimspector'
-" Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-" Plug 'Xuyuanp/nerdtree-git-plugin' 
 Plug 'ryanoasis/vim-devicons'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 if has('nvim') || has('patch-8.0.902')
@@ -77,6 +62,21 @@ if has('nvim') || has('patch-8.0.902')
 else
   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
+" Plug 'vim-airline/vim-airline'
+" Plug 'skywind3000/vim-quickui'
+" Plug 'skywind3000/gutentags_plus'
+" Plug 'skywind3000/vim-preview'
+" Plug 'xolox/vim-session'
+" Plug 'majutsushi/tagbar'
+" Plug 'ludovicchabant/vim-gutentags'
+" Plug 'davidhalter/jedi-vim'
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+" Plug 'honza/vim-snippets'
+" Plug 'uguu-org/vim-matrix-screensaver'
+" Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+" Plug 'Xuyuanp/nerdtree-git-plugin' 
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 """"""""""""""""""""""""""""""
