@@ -46,7 +46,6 @@ Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'kien/rainbow_parentheses.vim'
@@ -77,6 +76,7 @@ endif
 " Plug 'Xuyuanp/nerdtree-git-plugin' 
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'xolox/vim-misc'
+" Plug 'tpope/vim-surround'
 call plug#end()
 
 """"""""""""""""""""""""""""""
