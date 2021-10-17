@@ -310,4 +310,6 @@ nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
 """"""""""""""""""""""""""""""
 " => vim-which-key
 """"""""""""""""""""""""""""""
+let g:vista_default_executive = 'coc'
+let g:vista_sidebar_position = 'vertical topleft'
 nnoremap <silent> <leader>t :<c-u>Vista!!<CR>
