@@ -62,6 +62,7 @@ else
 endif
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mcchrish/nnn.vim'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 " Plug 'vim-airline/vim-airline'
 " Plug 'skywind3000/vim-quickui'
 " Plug 'skywind3000/gutentags_plus'
@@ -300,3 +301,7 @@ try
     source ~/.vim_runtime/my_configs/vim-grepper.vim
 catch
 endtry
+""""""""""""""""""""""""""""""
+" => vim-which-key
+""""""""""""""""""""""""""""""
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
