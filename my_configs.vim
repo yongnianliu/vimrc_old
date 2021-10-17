@@ -307,3 +307,7 @@ endtry
 """"""""""""""""""""""""""""""
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
+""""""""""""""""""""""""""""""
+" => vim-which-key
+""""""""""""""""""""""""""""""
+nnoremap <silent> <leader>t :<c-u>Vista!!<CR>
