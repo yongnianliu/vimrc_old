@@ -55,11 +55,11 @@ Plug 'puremourning/vimspector'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
-if has('nvim') || has('patch-8.0.902')
-  Plug 'mhinz/vim-signify'
-else
-  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
-endif
+" if has('nvim') || has('patch-8.0.902')
+"   Plug 'mhinz/vim-signify'
+" else
+"   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+" endif
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mcchrish/nnn.vim'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
