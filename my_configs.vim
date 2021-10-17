@@ -304,4 +304,5 @@ endtry
 """"""""""""""""""""""""""""""
 " => vim-which-key
 """"""""""""""""""""""""""""""
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
