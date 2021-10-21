@@ -56,7 +56,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'mcchrish/nnn.vim'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim'
 Plug 'voldikss/vim-floaterm'
@@ -83,6 +82,7 @@ Plug 'dyng/ctrlsf.vim'
 " else
 "   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 " endif
+" Plug 'mcchrish/nnn.vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""
