@@ -59,6 +59,8 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mcchrish/nnn.vim'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim'
+Plug 'voldikss/vim-floaterm'
+Plug 'dyng/ctrlsf.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'skywind3000/vim-quickui'
 " Plug 'skywind3000/gutentags_plus'
@@ -81,8 +83,7 @@ Plug 'liuchengxu/vista.vim'
 " else
 "   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 " endif
-Plug 'voldikss/vim-floaterm'
-Plug 'dyng/ctrlsf.vim'
+" Plug 'kdheepak/lazygit.nvim'
 call plug#end()
 
 """"""""""""""""""""""""""""""
