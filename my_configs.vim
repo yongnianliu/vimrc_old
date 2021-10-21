@@ -83,7 +83,6 @@ Plug 'dyng/ctrlsf.vim'
 " else
 "   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 " endif
-" Plug 'kdheepak/lazygit.nvim'
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -98,6 +97,7 @@ call plug#end()
 try
     colorscheme gruvbox
 catch
+    echo "caught" .. v:exception
 endtry
 
 if has("gui_running")
@@ -235,14 +235,7 @@ nnoremap <Leader>cm :wa<CR>:make<CR>:cw<CR>
 try
     source ~/.vim_runtime/my_configs/coc_config.vim
 catch
-endtry
-
-""""""""""""""""""""""""""""""
-" => lazygit
-""""""""""""""""""""""""""""""
-try
-    source ~/.vim_runtime/my_configs/lazygit.vim
-catch
+    echo "caught" .. v:exception
 endtry
 
 """"""""""""""""""""""""""""""
@@ -304,6 +297,7 @@ let g:vimspector_sign_priority = {
 try
     source ~/.vim_runtime/my_configs/vim-grepper.vim
 catch
+    echo "caught" .. v:exception
 endtry
 """"""""""""""""""""""""""""""
 " => vim-which-key
