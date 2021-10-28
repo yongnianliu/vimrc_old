@@ -60,6 +60,8 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'dyng/ctrlsf.vim'
+Plug 'airblade/vim-rooter'
+Plug 'wsdjeg/FlyGrep.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'skywind3000/vim-quickui'
 " Plug 'skywind3000/gutentags_plus'
@@ -329,3 +331,7 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 let g:ctrlsf_auto_preview = 1
+""""""""""""""""""""""""""""""
+" => vim-rooter
+""""""""""""""""""""""""""""""
+let g:rooter_patterns = ['.git', '.svn', 'Makefile', '*.sln', 'build/env.sh']
