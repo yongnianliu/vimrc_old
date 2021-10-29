@@ -61,7 +61,9 @@ Plug 'liuchengxu/vista.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'dyng/ctrlsf.vim'
 Plug 'airblade/vim-rooter'
-Plug 'wsdjeg/FlyGrep.vim'
+if has('nvim')
+  Plug 'wsdjeg/FlyGrep.vim'
+endif
 " Plug 'vim-airline/vim-airline'
 " Plug 'skywind3000/vim-quickui'
 " Plug 'skywind3000/gutentags_plus'
@@ -322,16 +324,23 @@ let g:floaterm_keymap_new = '<Leader>ft'
 """"""""""""""""""""""""""""""
 " => ctrlsf
 """"""""""""""""""""""""""""""
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-let g:ctrlsf_auto_preview = 1
+" nmap     <C-F>f <Plug>CtrlSFPrompt
+" vmap     <C-F>f <Plug>CtrlSFVwordPath
+" vmap     <C-F>F <Plug>CtrlSFVwordExec
+" nmap     <C-F>n <Plug>CtrlSFCwordPath
+" nmap     <C-F>p <Plug>CtrlSFPwordPath
+" nnoremap <C-F>o :CtrlSFOpen<CR>
+" nnoremap <C-F>t :CtrlSFToggle<CR>
+" inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+" let g:ctrlsf_auto_preview = 1
 """"""""""""""""""""""""""""""
 " => vim-rooter
 """"""""""""""""""""""""""""""
-let g:rooter_patterns = ['.git', '.svn', 'Makefile', '*.sln', 'build/env.sh']
+let g:rooter_patterns = ['.git', '.svn', 'Makefile', '*.sln', 'build/env.sh', '.vim']
+if has('nvim')
+  """"""""""""""""""""""""""""""
+  " => FlyGrep
+  """"""""""""""""""""""""""""""
+  nunmap <C-f>
+  nnoremap <silent> <C-f> :FlyGrep<CR>
+endif
