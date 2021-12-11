@@ -64,6 +64,7 @@ Plug 'airblade/vim-rooter'
 if has('nvim')
   Plug 'wsdjeg/FlyGrep.vim'
 endif
+Plug 'wsdjeg/FlyGrep.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'skywind3000/vim-quickui'
 " Plug 'skywind3000/gutentags_plus'
@@ -112,7 +113,7 @@ if has("gui_running")
   elseif has("gui_win32")
     " set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h11
     " set guifont="SourceCodePro\ NF:h11"
-    set guifont=SauceCodePro\ Nerd\ Font\ Mono:h11
+    set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
   endif
 endif
 
@@ -320,7 +321,11 @@ nnoremap <silent> <leader>t :<c-u>Vista!!<CR>
 """"""""""""""""""""""""""""""
 " => vim-floaterm
 """"""""""""""""""""""""""""""
-let g:floaterm_keymap_new = '<Leader>ft'
+" let g:floaterm_keymap_new = '<Leader>ft'
+" let g:floaterm_keymap_toggle = '<Leader>ft'
+" let g:floaterm_keymap_toggle = '<F12>'
+nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 """"""""""""""""""""""""""""""
 " => ctrlsf
 """"""""""""""""""""""""""""""
