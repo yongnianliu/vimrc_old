@@ -65,6 +65,7 @@ if has('nvim')
   Plug 'wsdjeg/FlyGrep.vim'
 endif
 Plug 'wsdjeg/FlyGrep.vim'
+Plug 'joshdick/onedark.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'skywind3000/vim-quickui'
 " Plug 'skywind3000/gutentags_plus'
@@ -100,7 +101,8 @@ call plug#end()
 " => colorcheme
 """"""""""""""""""""""""""""""
 try
-    colorscheme gruvbox
+    " colorscheme gruvbox
+    colorscheme onedark
 catch
     echo "caught" .. v:exception
 endtry
