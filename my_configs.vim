@@ -115,7 +115,8 @@ if has("gui_running")
   elseif has("gui_win32")
     " set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h11
     " set guifont="SourceCodePro\ NF:h11"
-    set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
+    " set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
+    set guifont=JetBrains\ Mono:h12
   endif
 endif
 
@@ -333,15 +334,15 @@ tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 """"""""""""""""""""""""""""""
 " => ctrlsf
 """"""""""""""""""""""""""""""
-" nmap     <C-F>f <Plug>CtrlSFPrompt
-" vmap     <C-F>f <Plug>CtrlSFVwordPath
-" vmap     <C-F>F <Plug>CtrlSFVwordExec
-" nmap     <C-F>n <Plug>CtrlSFCwordPath
-" nmap     <C-F>p <Plug>CtrlSFPwordPath
-" nnoremap <C-F>o :CtrlSFOpen<CR>
-" nnoremap <C-F>t :CtrlSFToggle<CR>
-" inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-" let g:ctrlsf_auto_preview = 1
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+let g:ctrlsf_auto_preview = 1
 """"""""""""""""""""""""""""""
 " => vim-rooter
 """"""""""""""""""""""""""""""
