@@ -31,12 +31,13 @@ if IsWSL()
     nnoremap <esc>^[ <esc>^[
 endif
 
-if has("win32")
-    set shell=C:\Windows\System32\wsl.exe
-    set shellpipe=|
-    set shellredir=>
-    set shellcmdflag=
-endif
+" Change shell to wsl
+" if has("win32")
+"     set shell=C:\Windows\System32\wsl.exe
+"     set shellpipe=|
+"     set shellredir=>
+"     set shellcmdflag=
+" endif
 
 call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'mbbill/undotree'
@@ -64,7 +65,6 @@ Plug 'airblade/vim-rooter'
 if has('nvim')
   Plug 'wsdjeg/FlyGrep.vim'
 endif
-Plug 'wsdjeg/FlyGrep.vim'
 Plug 'joshdick/onedark.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'skywind3000/vim-quickui'
@@ -279,6 +279,8 @@ noremap <silent><c-b> :AsyncTask file-build<cr>
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 " mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
 
+nmap <leader>cb <Plug>VimspectorToggleConditionalBreakpoint 
+xmap <leader>cb <Plug>VimspectorToggleConditionalBreakpoint 
 " for normal mode - the word under the cursor
 nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
