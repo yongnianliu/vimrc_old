@@ -355,3 +355,26 @@ if has('nvim')
   nunmap <C-f>
   nnoremap <silent> <C-f> :FlyGrep<CR>
 endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => lightline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'],
+      \             ['fugitive', 'readonly', 'filename', 'modified'] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+      \ },
+      \ 'separator': { 'left': ' ', 'right': ' ' },
+      \ 'subseparator': { 'left': ' ', 'right': ' ' }
+      \ }
+
