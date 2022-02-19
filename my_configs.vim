@@ -45,8 +45,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'yianwillis/vimcdoc'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'kien/rainbow_parentheses.vim'
@@ -89,6 +87,8 @@ Plug 'joshdick/onedark.vim'
 "   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 " endif
 " Plug 'mcchrish/nnn.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -101,24 +101,29 @@ call plug#end()
 " => colorcheme
 """"""""""""""""""""""""""""""
 try
-    " colorscheme gruvbox
-    colorscheme onedark
+    " set background=dark
+    colorscheme gruvbox
+    " colorscheme onedark
 catch
     echo "caught" .. v:exception
 endtry
 
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
-  elseif has("gui_win32")
-    " set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h11
-    " set guifont="SourceCodePro\ NF:h11"
-    " set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
-    " set guifont=JetBrains\ Mono:h12
+if has("nvim")
     set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h12
-  endif
+else
+    if has("gui_running")
+        if has("gui_gtk2")
+            set guifont=Inconsolata\ 12
+        elseif has("gui_macvim")
+            set guifont=Menlo\ Regular:h14
+        elseif has("gui_win32")
+            " set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h11
+            " set guifont="SourceCodePro\ NF:h11"
+            " set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
+            " set guifont=JetBrains\ Mono:h12
+            set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h12
+        endif
+    endif
 endif
 
 """"""""""""""""""""""""""""""
@@ -184,7 +189,8 @@ nnoremap <leader>u :UndotreeToggle <CR>
 " => FZF 
 """"""""""""""""""""""""""""""
 " nunmap <c-p>
-nnoremap <c-p> :FZF <CR>
+" nnoremap <c-p> :FZF <CR>
+let g:ctrlp_map = '<C-p>'
 
 """"""""""""""""""""""""""""""
 " => vim-session
@@ -278,21 +284,10 @@ noremap <silent><c-b> :AsyncTask file-build<cr>
 """"""""""""""""""""""""""""""
 " =>vimspector
 """"""""""""""""""""""""""""""
-let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
-" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
-
-nmap <leader>cb <Plug>VimspectorToggleConditionalBreakpoint 
-xmap <leader>cb <Plug>VimspectorToggleConditionalBreakpoint 
-" for normal mode - the word under the cursor
-nmap <Leader>di <Plug>VimspectorBalloonEval
-" for visual mode, the visually selected text
-xmap <Leader>di <Plug>VimspectorBalloonEval
-
-let g:vimspector_sign_priority = {
-  \   'vimspectorBP': 19,
-  \   'vimspectorBPCond': 19,
-  \   'vimspectorBPDisabled': 19,
-  \ }
+try
+    source ~/.vim_runtime/my_configs/vimspector.vim
+catch
+endtry
 
 """"""""""""""""""""""""""""""
 " => LeaderF
