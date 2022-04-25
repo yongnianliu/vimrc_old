@@ -43,8 +43,6 @@ call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
 Plug 'yianwillis/vimcdoc'
-Plug 'skywind3000/asynctasks.vim'
-Plug 'skywind3000/asyncrun.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'kien/rainbow_parentheses.vim'
@@ -53,16 +51,12 @@ Plug 'ronakg/quickr-preview.vim'
 Plug 'puremourning/vimspector'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
-Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim'
 Plug 'voldikss/vim-floaterm'
-Plug 'dyng/ctrlsf.vim'
 Plug 'airblade/vim-rooter'
-if has('nvim')
-  Plug 'wsdjeg/FlyGrep.vim'
-endif
+Plug 'wsdjeg/FlyGrep.vim'
 Plug 'joshdick/onedark.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'skywind3000/vim-quickui'
@@ -89,6 +83,10 @@ Plug 'joshdick/onedark.vim'
 " Plug 'mcchrish/nnn.vim'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/fzf.vim'
+" Plug 'dyng/ctrlsf.vim'
+Plug 'skywind3000/asynctasks.vim'
+Plug 'skywind3000/asyncrun.vim'
+" Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -102,8 +100,8 @@ call plug#end()
 """"""""""""""""""""""""""""""
 try
     " set background=dark
-    colorscheme gruvbox
-    " colorscheme onedark
+    " colorscheme gruvbox
+    colorscheme onedark
 catch
     echo "caught" .. v:exception
 endtry
@@ -300,11 +298,11 @@ endtry
 """"""""""""""""""""""""""""""
 " => vim-grepper
 """"""""""""""""""""""""""""""
-try
-    source ~/.vim_runtime/my_configs/vim-grepper.vim
-catch
-    echo "caught" .. v:exception
-endtry
+" try
+"     source ~/.vim_runtime/my_configs/vim-grepper.vim
+" catch
+"     echo "caught" .. v:exception
+" endtry
 """"""""""""""""""""""""""""""
 " => vim-which-key
 """"""""""""""""""""""""""""""
@@ -330,26 +328,25 @@ tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 """"""""""""""""""""""""""""""
 " => ctrlsf
 """"""""""""""""""""""""""""""
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-let g:ctrlsf_auto_preview = 1
+" nmap     <C-F>f <Plug>CtrlSFPrompt
+" vmap     <C-F>f <Plug>CtrlSFVwordPath
+" vmap     <C-F>F <Plug>CtrlSFVwordExec
+" nmap     <C-F>n <Plug>CtrlSFCwordPath
+" nmap     <C-F>p <Plug>CtrlSFPwordPath
+" nnoremap <C-F>o :CtrlSFOpen<CR>
+" nnoremap <C-F>t :CtrlSFToggle<CR>
+" inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+" let g:ctrlsf_auto_preview = 1
 """"""""""""""""""""""""""""""
 " => vim-rooter
 """"""""""""""""""""""""""""""
 let g:rooter_patterns = ['.git', '.svn', 'Makefile', '*.sln', 'build/env.sh', '.vim']
-if has('nvim')
-  """"""""""""""""""""""""""""""
-  " => FlyGrep
-  """"""""""""""""""""""""""""""
-  nunmap <C-f>
-  nnoremap <silent> <C-f> :FlyGrep<CR>
-endif
+""""""""""""""""""""""""""""""
+" => FlyGrep
+""""""""""""""""""""""""""""""
+nunmap <C-f>
+nnoremap <silent> <C-f> :FlyGrep<CR>
+let g:_spacevim_if_lua = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
