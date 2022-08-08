@@ -3,6 +3,7 @@
 """"""""""""""""""""""""""""""
 :set number
 set clipboard+=unnamed
+set clipboard+=unnamedplus
 au BufWinEnter *.* set colorcolumn=80
 " :set colorcolumn=75
 "set bg=dark
@@ -32,12 +33,12 @@ if IsWSL()
 endif
 
 " Change shell to wsl
-" if has("win32")
-"     set shell=C:\Windows\System32\wsl.exe
-"     set shellpipe=|
-"     set shellredir=>
-"     set shellcmdflag=
-" endif
+if has("win32")
+    set shell=C:/Windows/System32/wsl.exe
+    set shellpipe=|
+    set shellredir=>
+    set shellcmdflag=
+endif
 
 call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'mbbill/undotree'
