@@ -34,10 +34,10 @@ endif
 
 " Change shell to wsl
 if has("win32")
-    set shell=C:/Windows/System32/wsl.exe
-    set shellpipe=|
-    set shellredir=>
-    set shellcmdflag=
+    " set shell=C:/Windows/System32/wsl.exe
+    " set shellpipe=|
+    " set shellredir=>
+    " set shellcmdflag=
 endif
 
 call plug#begin('~/.vim_runtime/my_plugins')
