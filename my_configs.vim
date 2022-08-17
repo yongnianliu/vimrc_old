@@ -59,6 +59,9 @@ Plug 'voldikss/vim-floaterm'
 Plug 'airblade/vim-rooter'
 Plug 'wsdjeg/FlyGrep.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Plug 'cdelledonne/vim-cmake'
 " Plug 'vim-airline/vim-airline'
 " Plug 'skywind3000/vim-quickui'
 " Plug 'skywind3000/gutentags_plus'
@@ -142,6 +145,7 @@ if executable('rg')
   let g:ctrlp_working_path_mode = 'ra'
   let g:ctrlp_switch_buffer = 'et'
   let g:ackprg = 'rg --vimgrep --no-heading'
+  let g:FlyGrep_search_tools = 'rg'
 endif
 
 """"""""""""""""""""""""""""""
@@ -187,9 +191,9 @@ nnoremap <leader>u :UndotreeToggle <CR>
 """"""""""""""""""""""""""""""
 " => FZF 
 """"""""""""""""""""""""""""""
-" nunmap <c-p>
-" nnoremap <c-p> :FZF <CR>
-let g:ctrlp_map = '<C-p>'
+nunmap <c-p>
+nnoremap <c-p> :FZF <CR>
+" let g:ctrlp_map = '<C-p>'
 
 """"""""""""""""""""""""""""""
 " => vim-session
@@ -348,6 +352,7 @@ let g:rooter_patterns = ['.git', '.svn', 'Makefile', '*.sln', 'build/env.sh', '.
 nunmap <C-f>
 nnoremap <silent> <C-f> :FlyGrep<CR>
 let g:_spacevim_if_lua = 1
+let g:FlyGrep_input_delay = 100
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
