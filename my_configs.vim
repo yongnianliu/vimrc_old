@@ -123,7 +123,8 @@ else
             " set guifont="SourceCodePro\ NF:h11"
             " set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
             " set guifont=JetBrains\ Mono:h12
-            set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h12
+            " set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h12
+            set guifont=JetBrainsMono\ NFM:h12
         endif
     endif
 endif
