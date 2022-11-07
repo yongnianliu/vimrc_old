@@ -146,6 +146,8 @@ if executable('rg')
   let g:ctrlp_switch_buffer = 'et'
   let g:ackprg = 'rg --vimgrep --no-heading'
   let g:FlyGrep_search_tools = 'rg'
+  " rg instead of vim grep
+  set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 endif
 
 """"""""""""""""""""""""""""""
