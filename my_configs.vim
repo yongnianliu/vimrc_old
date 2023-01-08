@@ -157,6 +157,7 @@ if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
   let g:FlyGrep_search_tools = 'rg'
 endif
+nnoremap <silent> <leader>rg :<c-u>Rg<CR>
 
 """"""""""""""""""""""""""""""
 " => Ack quick search word
