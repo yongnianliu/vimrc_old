@@ -123,7 +123,8 @@ else
         if has("gui_gtk2")
             set guifont=Inconsolata\ 12
         elseif has("gui_macvim")
-            set guifont=Menlo\ Regular:h14
+            " set guifont=Menlo\ Regular:h14
+            set guifont=JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete\ Mono:h16
         elseif has("gui_win32")
             " set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h11
             " set guifont="SourceCodePro\ NF:h11"
