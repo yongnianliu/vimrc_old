@@ -42,6 +42,8 @@ if has("win32")
     " set shellcmdflag=
 elseif has("unix")
     set shell=/usr/bin/bash
+elseif has("mac")
+    set shell=/bin/zsh
 endif
 
 call plug#begin('~/.vim_runtime/my_plugins')
@@ -339,6 +341,9 @@ nnoremap <silent> <leader>t :<c-u>Vista!!<CR>
 " let g:floaterm_keymap_new = '<Leader>ft'
 " let g:floaterm_keymap_toggle = '<Leader>ft'
 " let g:floaterm_keymap_toggle = '<F12>'
+if has('mac')
+    let g:floaterm_shell = '/bin/zsh'
+endif
 let g:floaterm_wintype = 'split'
 let g:floaterm_position = 'bottom'
 let g:floaterm_keymap_toggle = '<F12>'
