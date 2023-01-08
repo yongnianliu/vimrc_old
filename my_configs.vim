@@ -64,7 +64,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'airblade/vim-rooter'
-Plug 'wsdjeg/FlyGrep.vim'
+" Plug 'wsdjeg/FlyGrep.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -156,7 +156,7 @@ if executable('rg')
   let g:ctrlp_working_path_mode = 'ra'
   let g:ctrlp_switch_buffer = 'et'
   let g:ackprg = 'rg --vimgrep --no-heading'
-  let g:FlyGrep_search_tools = 'rg'
+  " let g:FlyGrep_search_tools = 'rg'
 endif
 nnoremap <silent> <leader>rg :<c-u>Rg<CR>
 
@@ -375,10 +375,10 @@ let g:rooter_patterns = ['.git', '.svn', 'Makefile', '*.sln', 'build/env.sh', '.
 """"""""""""""""""""""""""""""
 " => FlyGrep
 """"""""""""""""""""""""""""""
-nunmap <C-f>
-nnoremap <silent> <C-f> :FlyGrep<CR>
-let g:_spacevim_if_lua = 1
-let g:FlyGrep_input_delay = 100
+" nunmap <C-f>
+" nnoremap <silent> <C-f> :FlyGrep<CR>
+" let g:_spacevim_if_lua = 1
+" let g:FlyGrep_input_delay = 100
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
