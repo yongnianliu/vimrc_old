@@ -41,11 +41,12 @@ if has("win32")
     " set shellredir=>
     " set shellcmdflag=
 elseif has("unix")
-    set shell=/usr/bin/bash
-elseif has("mac")
-    set shell=/bin/zsh
+    if has("mac")
+        set shell=/bin/zsh
+    else
+        set shell=/usr/bin/bash
+    endif
 endif
-
 call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
