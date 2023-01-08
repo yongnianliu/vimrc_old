@@ -28,8 +28,10 @@ function! IsWSL()
     return 0
 endfunction
 " fix windows WSL已启动就进入REPLACE MODE问题
-if IsWSL()
-    nnoremap <esc>^[ <esc>^[
+if has("win32")
+    if IsWSL()
+        nnoremap <esc>^[ <esc>^[
+    endif
 endif
 
 " Change shell to wsl
