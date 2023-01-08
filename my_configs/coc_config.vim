@@ -146,3 +146,6 @@ nnoremap <silent><nowait> <leader><space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader><space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <leader><space>p  :<C-u>CocListResume<CR>
+
+" Default install extensions
+let g:coc_global_extensions = ['coc-json', 'coc-fzf-preview', 'coc-go']
