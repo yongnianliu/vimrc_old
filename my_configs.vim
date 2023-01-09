@@ -28,8 +28,10 @@ function! IsWSL()
     return 0
 endfunction
 " fix windows WSL已启动就进入REPLACE MODE问题
-if IsWSL()
-    nnoremap <esc>^[ <esc>^[
+if has("win32")
+    if IsWSL()
+        nnoremap <esc>^[ <esc>^[
+    endif
 endif
 
 " Change shell to wsl
@@ -39,9 +41,12 @@ if has("win32")
     " set shellredir=>
     " set shellcmdflag=
 elseif has("unix")
-    set shell=/usr/bin/bash
+    if has("mac")
+        set shell=/bin/zsh
+    else
+        set shell=/usr/bin/bash
+    endif
 endif
-
 call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
@@ -59,7 +64,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'airblade/vim-rooter'
-Plug 'wsdjeg/FlyGrep.vim'
+" Plug 'wsdjeg/FlyGrep.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -121,7 +126,8 @@ else
         if has("gui_gtk2")
             set guifont=Inconsolata\ 12
         elseif has("gui_macvim")
-            set guifont=Menlo\ Regular:h14
+            " set guifont=Menlo\ Regular:h14
+            set guifont=JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete\ Mono:h16
         elseif has("gui_win32")
             " set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h11
             " set guifont="SourceCodePro\ NF:h11"
@@ -150,10 +156,11 @@ if executable('rg')
   let g:ctrlp_working_path_mode = 'ra'
   let g:ctrlp_switch_buffer = 'et'
   let g:ackprg = 'rg --vimgrep --no-heading'
-  let g:FlyGrep_search_tools = 'rg'
+  " let g:FlyGrep_search_tools = 'rg'
   " rg instead of vim grep
   set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 endif
+nnoremap <silent> <leader>rg :<c-u>Rg<CR>
 
 """"""""""""""""""""""""""""""
 " => Ack quick search word
@@ -332,12 +339,26 @@ let g:vista_sidebar_position = 'vertical topleft'
 " => Vista
 """"""""""""""""""""""""""""""
 nnoremap <silent> <leader>t :<c-u>Vista!!<CR>
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+set statusline+=%{NearestMethodOrFunction()}
+
+" By default vista.vim never run if you don't call it explicitly.
+"
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 """"""""""""""""""""""""""""""
 " => vim-floaterm
 """"""""""""""""""""""""""""""
 " let g:floaterm_keymap_new = '<Leader>ft'
 " let g:floaterm_keymap_toggle = '<Leader>ft'
 " let g:floaterm_keymap_toggle = '<F12>'
+if has('mac')
+    let g:floaterm_shell = '/bin/zsh'
+endif
 let g:floaterm_wintype = 'split'
 let g:floaterm_position = 'bottom'
 let g:floaterm_keymap_toggle = '<F12>'
@@ -367,18 +388,18 @@ let g:rooter_patterns = ['.git', '.svn', 'Makefile', '*.sln', 'build/env.sh', '.
 """"""""""""""""""""""""""""""
 " => FlyGrep
 """"""""""""""""""""""""""""""
-nunmap <C-f>
-nnoremap <silent> <C-f> :FlyGrep<CR>
-let g:_spacevim_if_lua = 1
-let g:FlyGrep_input_delay = 100
+" nunmap <C-f>
+" nnoremap <silent> <C-f> :FlyGrep<CR>
+" let g:_spacevim_if_lua = 1
+" let g:FlyGrep_input_delay = 100
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'filename', 'modified'] ]
+      \             ['fugitive', 'readonly', 'filename', 'modified', 'method'] ]
       \ },
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
@@ -389,6 +410,9 @@ let g:lightline = {
       \   'readonly': '(&filetype!="help"&& &readonly)',
       \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
       \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+      \ },
+      \ 'component_function': {
+      \   'method': 'NearestMethodOrFunction'
       \ },
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
