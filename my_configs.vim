@@ -211,7 +211,7 @@ nnoremap <leader>u :UndotreeToggle <CR>
 " => FZF 
 """"""""""""""""""""""""""""""
 nunmap <c-p>
-nnoremap <c-p> :FZF <CR>
+nnoremap <c-p> :Files <CR>
 " let g:ctrlp_map = '<C-p>'
 " let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4"
 " if filereadable(expand("$HOME/.fzf/fzf_preview.py"))
