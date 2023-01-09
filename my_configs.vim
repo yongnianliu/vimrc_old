@@ -34,19 +34,24 @@ if has("win32")
     endif
 endif
 
-" Change shell to wsl
-if has("win32")
-    " set shell=C:/Windows/System32/wsl.exe
-    " set shellpipe=|
-    " set shellredir=>
-    " set shellcmdflag=
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Shell related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("mac") || has("macunix")
+    set shell=/bin/zsh
+elseif has("win16") || has("win32")
+" set shell=C:/Windows/System32/wsl.exe
+" set shellpipe=|
+" set shellredir=>
+" set shellcmdflag=
+elseif has("gui_gtk2")
+    set shell=/bin/zsh
+elseif has("linux")
+    set shell=/bin/zsh
 elseif has("unix")
-    if has("mac")
-        set shell=/bin/zsh
-    else
-        set shell=/usr/bin/bash
-    endif
+    set shell=/bin/zsh
 endif
+
 call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
