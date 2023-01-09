@@ -9,6 +9,7 @@
 " => Load pathogen paths
 """"""""""""""""""""""""""""""
 let s:vim_runtime = expand('<sfile>:p:h')."/.."
+let g:pathogen_blacklist = [ 'ctrlp.vim', 'vim-coffee-script', 'vim-less', 'vim-bundle-mako', 'nginx.vim', 'rust.vim', 'vim-ruby', 'typescript-vim', 'vim-javascript', 'vim-python-pep8-indent', 'vim-multiple-cursors']
 call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
 call pathogen#infect(s:vim_runtime.'/sources_non_forked/{}')
 call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
