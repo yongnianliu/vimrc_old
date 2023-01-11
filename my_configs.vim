@@ -344,6 +344,7 @@ let g:vista_sidebar_position = 'vertical topleft'
 " => Vista
 """"""""""""""""""""""""""""""
 nnoremap <silent> <leader>t :<c-u>Vista!!<CR>
+nnoremap <silent> <C-\> :<c-u>Vista finder<CR>
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
