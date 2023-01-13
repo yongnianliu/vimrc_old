@@ -99,8 +99,6 @@ Plug 'junegunn/fzf.vim'
 "   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 " endif
 " Plug 'mcchrish/nnn.vim'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
 " Plug 'dyng/ctrlsf.vim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
