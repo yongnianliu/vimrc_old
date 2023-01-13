@@ -102,6 +102,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'dyng/ctrlsf.vim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'SirVer/ultisnips'
 " Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 call plug#end()
 
@@ -296,7 +297,7 @@ let g:asyncrun_open = 8
 " => AsyncTask
 """"""""""""""""""""""""""""""
 noremap <silent><c-f5> :AsyncTask file-run<cr>
-noremap <silent><c-b> :AsyncTask file-build<cr>
+" noremap <silent><c-b> :AsyncTask file-build<cr>
 
 """"""""""""""""""""""""""""""
 " => vim-airline
