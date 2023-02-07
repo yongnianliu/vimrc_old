@@ -128,7 +128,8 @@ if has("nvim")
 else
     if has("gui_running")
         if has("gui_gtk2")
-            set guifont=Inconsolata\ 12
+            " set guifont=Inconsolata\ 12
+            set guifont=JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete\ Mono:h16
         elseif has("gui_macvim")
             " set guifont=Menlo\ Regular:h14
             set guifont=JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete\ Mono:h16
@@ -292,6 +293,8 @@ let g:snipMate = { 'snippet_version' : 1 }
 " => skywind3000/asyncrun.vim' 
 """"""""""""""""""""""""""""""
 let g:asyncrun_open = 8
+let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg']
+let g:asynctasks_term_pos = 'vim'
 
 """"""""""""""""""""""""""""""
 " => AsyncTask
